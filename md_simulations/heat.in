@@ -1,0 +1,17 @@
+#Heating: 100ps from 0K to 300K
+&cntrl
+ imin=0
+ irest=0,
+ ntx=1
+ nstlim=50000, dt=0.002,
+ ntc=2, ntf=2,
+ cut=12.0, ntb=1,
+ nrespa=1
+ ntpr=500, ntwr=500, ntwx=500,
+ ntt=3, gamma_ln=2.0, tautp=3.0
+ tempi=0.0, temp0=300.0,
+ ntr=1,
+ restraint_wt=30.0, restraintmask=':1-260'
+ /
+
+

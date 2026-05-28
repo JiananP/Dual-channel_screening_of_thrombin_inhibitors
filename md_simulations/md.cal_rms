@@ -1,0 +1,6 @@
+trajin complex_solvate.inpcrd
+trajin md.crd
+rms mass first out rms-backbone.rms :1-351@CA,C,N time 1                                                                                                                            
+rms mass first out rms-lig1.rms :352&!@H= time 1
+rms mass first out rms-lig2.rms :353&!@H= time 1
+

@@ -1,0 +1,6 @@
+trajin md.crd
+ 
+center :1-260
+strip :WAT
+strip :Na+
+trajout md-new.crd   

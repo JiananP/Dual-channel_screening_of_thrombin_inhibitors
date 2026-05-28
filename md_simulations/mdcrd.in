@@ -1,0 +1,6 @@
+trajin md.crd
+
+center :1-353
+strip :WAT
+strip :Na+
+trajout md_final.crd nobox

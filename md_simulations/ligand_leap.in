@@ -1,0 +1,40 @@
+source leaprc.protein.ff19SB                                                                                                                                                             
+# Amber 20及以上可以使用
+# leaprc.protein.ff19SB
+source leaprc.gaff2
+source leaprc.water.tip3p
+ 
+############Ligand1############
+loadamberparams lig.frcmod
+lig1 = loadmol2 lig.mol2
+check lig1
+saveamberparm lig1 lig.prmtop lig.inpcrd
+##############################
+ 
+############Ligand2############
+#loadamberparams SNY_com.frcmod
+#lig2 = loadmol2 SNY_com.mol2
+#check lig2
+#saveamberparm lig2 SNY_com.prmtop SNY_com.inpcrd
+##############################
+ 
+############Protein###########
+pro = loadpdb X_noH.pdb
+check pro
+saveamberparm pro X_noH.prmtop X_noH.inpcrd
+##############################
+ 
+##########Complex#############
+com = combine {pro lig1}
+savepdb com complex.pdb
+saveamberparm com complex.prmtop complex.inpcrd
+addions com Na+ 0
+addions com Cl- 0
+solvatebox com TIP3PBOX 12.0
+check com
+savepdb com complex_solvate.pdb
+saveamberparm com complex_solvate.prmtop complex_solvate.inpcrd
+##############################
+ 
+quit
+

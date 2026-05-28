@@ -1,0 +1,25 @@
+ Equilibration: 1ns NPT with backbone restraints
+&cntrl
+  imin=0,        
+  irest=1,       
+  ntx=5,         
+  nstlim=500000,  
+  dt=0.002,      
+  ntc=2,         
+  ntf=2,         
+  ntb=2,         
+  ntp=1,         
+  pres0=1.0,     
+  taup=2.0,      
+  cut=10.0,      
+  ntt=3,         
+  gamma_ln=2.0,  
+  temp0=300.0,   
+  ntpr=500,      
+  ntwx=5000,     
+  ntwr=50000,    
+  ntr=1,                  
+  restraint_wt=5.0,       
+  restraintmask='(:1-259@CA,C,N) | (:260&!@H=)',
+ /
+END

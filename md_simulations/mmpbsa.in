@@ -1,0 +1,14 @@
+&general 
+   startframe=501, endframe=1000, verbose =2, keep_files=2, interval=2,
+/
+&GB
+   igb = 5, saltcon=0.100,
+/
+&PB
+   inp=0, radiopt=0,
+   istrng=0.15, fillratio=4.0
+/
+&decomp
+   idecomp=1,print_res="1-259; 260",
+   dec_verbose=1,
+/

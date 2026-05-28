@@ -1,0 +1,22 @@
+#!/bin/bash                                                                                                                                                                                                                                                                                                                                                                           
+#SBATCH --job-name=t2
+#SBATCH --chdir=/nfs/home/pengjianan/md/t2
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=52
+#SBATCH --gres=gpu:1
+#SBATCH -o mjob.out
+#SBATCH -e mjob.err
+#SBATCH -p egroup
+#SBATCH -w eg046
+
+pmemd.cuda -O -i md.in -o md.out -p complex_solvate.prmtop -c eq.rst -r md.rst -x md.crd -ref eq.rst
+
+####  -O 覆盖掉所有的输出文件
+####  -i 输入文件名称
+####  -o 输出文件名称
+####  -p 参数/拓扑结构文件
+####  -c 本次运行的初始坐标集
+####  -r 本次MD或最小化运行的最终坐标集
+####  -ref 用于位置约束的参考坐标
+####  -x 分子动力学轨迹文件

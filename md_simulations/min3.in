@@ -1,0 +1,15 @@
+#ori initial min all
+&cntrl
+imin = 1,
+ntmin = 1,
+maxcyc = 3000,
+ncyc = 1000,
+ntpr = 1000,
+cut = 12.0,
+ntb = 1,
+ntr = 1,
+drms= 0.1
+restraint_wt=10,restraintmask=':1-259@CA,C,N'
+/
+
+
